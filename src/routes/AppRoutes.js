@@ -8,14 +8,17 @@ import { Error } from '../components/Error'
 import { Favorites } from '../components/Favorites'
 import { Trolley } from '../components/Trolley'
 import { BoughtProducts } from '../components/BoughtProducts'
-import Login from '../components/Login/Login';
-import Contactanos from '../components/Contactanos/Contactanos'
+import  Login  from '../components/Login/Login';
+import  Registro  from '../components/Registrarse/Registrarse';
+import  Contact  from '../components/Contactanos/Contactanos';
 export const AppRoutes = () => {
   return (
     <HashRouter hashType="slash">
-      <Routes>
-        <Route path='/' element={<Login />} />
-      </Routes>
+    <Routes>
+     <Route path='/Registro' element = {<Login />} />
+     <Route path='/Contacto' element={<Contact />}  />
+     <Route path='/' element = {<Registro />} />
+    </Routes>
       <Header />
 
       <Routes>
@@ -24,7 +27,7 @@ export const AppRoutes = () => {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/trolley' element={<Trolley />} />
         <Route path='/trolley/boughtProducts' element={<BoughtProducts />} />
-        <Route path='/Contacto' element={<Contactanos />} />
+
         <Route path='*' element={<Error />} />
       </Routes>
 
