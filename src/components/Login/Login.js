@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import '../../../src/assets/css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{ useState, useEffect } from 'react'
-function Login() 
-{ 
+function Login()
+{
   const [email,setemail]=useState("");
   const [password,setpassword]=useState("");
 
@@ -12,7 +12,7 @@ function Login()
     if (localStorage.getItem('user-info')) {
       history("/Registro")
     }
-  }
+  },[]
 
   )
  async function Logueo()
@@ -45,7 +45,7 @@ body: JSON.stringify(item)
       <br/>
       <input type="password" className="form-control" onChange={(e) => password(e.target.value)} />
       <br/>
-      <button className="btn btn-primary" onClick={Logueo()} >Iniciar Sesion </button>
+      <button className="btn btn-primary" onClick={Logueo} >Iniciar Sesion </button>
       <br/>
       <button className="btn btn-primary" onClick={event =>  window.location.href='/'} >Crear Cuenta </button>
       </div>

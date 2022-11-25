@@ -39,7 +39,7 @@ function Registro()
         <input type="text" value = {name} className="form-control" onChange={(e) => setname(e.target.value)} />
         <label> nombre: </label>
         <br/>
-        <button className="btn btn-primary" onClick={SignUp()}>Registrarse </button>
+        <button className="btn btn-primary" onClick={SignUp}>Registrarse </button>
         </div>
         </div>
       </div>
