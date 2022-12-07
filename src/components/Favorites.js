@@ -50,7 +50,7 @@ export const Favorites = () => {
 
   return (
     <div className='p-4'>
-      <h2 className='text-white bg-success w-25 rounded-1 text-center mt-3 mb-5 border border-2 border-dark'>Favorites</h2>
+      <h2 className='text-white bg-success w-25 rounded-1 text-center mt-3 mb-5 border border-2 border-dark'>Favoritos</h2>
 
       <Row xs={1} md={4} className="g-4">
         {favoriteStorage?.map(favorite => (
@@ -60,7 +60,7 @@ export const Favorites = () => {
               <Card.Body>
                 <Card.Title className='text-bold text-center fw-bold'>{favorite.nombre}</Card.Title>
                 <Card.Text className='text-center'>
-                  El precio es: {favorite.precio} ₽
+                  El precio es: {favorite.precio} $
                 </Card.Text>
               </Card.Body>
               <Button variant="light" onClick={() => addToTrolley(favorite.id, favorite.imagen, favorite.nombre, favorite.precio)}>Añadir al carrito</Button>

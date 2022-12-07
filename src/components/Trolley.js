@@ -1,16 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../UseContext/Context';
 import { Link } from 'react-router-dom'
-
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-
 export const Trolley = () => {
   const [trolleyStorage, setTrolleyStorage] = useState();
   const { trolley, setBoughtThings } = useContext(Context);
-
   //SetTrolley to be shown on screen
   useEffect(() => {
     let getStorage = JSON.parse(localStorage.getItem('trolley'));
@@ -28,25 +25,25 @@ export const Trolley = () => {
 
     localStorage.setItem('trolley', JSON.stringify(filtered_array));
   };
-
+  let cantidad = 0;
   //Plus function
   const plus = (id,
     imagen,
     nombre,
-    precio, quantityParam) => {
-    if (quantityParam < 20) {
-      let quantity = quantityParam + 1;
+    precio, CantidadParametro= cantidad) => {
+    if (CantidadParametro < 20) {
+      cantidad = CantidadParametro + 1;
 
-      let new_quantity = {
+      let new_cantidad = {
         id,
         imagen,
         nombre,
         precio,
-        quantity
+        cantidad
       }
 
       let found_product = trolleyStorage.findIndex(product => product.id === id);
-      trolleyStorage[found_product] = new_quantity;
+      trolleyStorage[found_product] = new_cantidad;
 
       setTrolleyStorage(trolleyStorage);
       localStorage.setItem('trolley', JSON.stringify(trolleyStorage));
@@ -56,25 +53,24 @@ export const Trolley = () => {
     }
 
   };
-
   //Reduce function
   const reduce = (id,
     imagen,
     nombre,
-    precio, quantityParam) => {
-    if (quantityParam > 1) {
-      let quantity = quantityParam - 1;
+    precio, CantidadParametro = cantidad) => {
+    if (CantidadParametro > 1) {
+      let cantidad = CantidadParametro - 1;
 
-      let new_quantity = {
+      let new_cantidad = {
         id,
         imagen,
         nombre,
         precio,
-        quantity
+        cantidad
       }
 
       let found_product = trolleyStorage.findIndex(product => product.id === id);
-      trolleyStorage[found_product] = new_quantity;
+      trolleyStorage[found_product] = new_cantidad;
 
       setTrolleyStorage(trolleyStorage);
       localStorage.setItem('trolley', JSON.stringify(trolleyStorage));
@@ -98,19 +94,19 @@ export const Trolley = () => {
               <Card.Body>
                 <Card.Title className='text-bold text-center fw-bold'>{troll.nombre}</Card.Title>
                 <Card.Text className='text-center'>
-                  el precio es: {troll.precio} ₽
+                  el precio es: {troll.precio} $
                 </Card.Text>
               </Card.Body>
               <h5 className='fw-bold'>Cantidad: </h5>
               <div className='w-50 bg-light rounded-1 text-dark mb-3 border border-2 border-dark' >
                 {
-                  troll.quantity
+                  troll.cantidad 
                 }
               </div>
 
               <div className='w-50'>
-                <Button className=' me-3 mb-3 w-25' variant="dark" onClick={() => reduce(troll.id, troll.imagen, troll.nombre, troll.precio, troll.quantity)}>-</Button>
-                <Button className='mb-3 w-25' variant="dark" onClick={() => plus(troll.id, troll.imagen, troll.nombre, troll.precio, troll.quantity)}>+</Button>
+                <Button className=' me-3 mb-3 w-25' variant="dark" onClick={() => reduce(troll.id, troll.imagen, troll.nombre, troll.precio, troll.cantidad)}>-</Button>
+                <Button className='mb-3 w-25' variant="dark" onClick={() => plus(troll.id, troll.imagen, troll.nombre, troll.precio, troll.cantidad)}>+</Button>
               </div>
 
               <Button variant="success" onClick={() => removeTrolley(troll.id)}>Remover del carrito!</Button>

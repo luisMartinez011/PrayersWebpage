@@ -42,7 +42,6 @@ export const ListProducts = () => {
     console.log(dataProducts[0].id)
     console.log(dataProducts[0]._id)
   }
-
   //Catch data added to Trolley
   const addTrolley = (id, imagen, nombre, precio) => {
     let product_to_trolley = {
@@ -75,7 +74,7 @@ export const ListProducts = () => {
                 <Card.Body>
                   <Card.Title className='text-bold text-center fw-bold'>{product.nombre}</Card.Title>
                   <Card.Text className='text-center'>
-                    El precio es: {product.precio} ₽
+                    El precio es: {product.precio} $
                   </Card.Text>
                 </Card.Body>
                 <Button variant="light" onClick={() => addFavorites(product._id.$oid, product.imagen, product.nombre, product.precio)}>Añadir A Favoritos</Button>
