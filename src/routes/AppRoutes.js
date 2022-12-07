@@ -15,14 +15,13 @@ export const AppRoutes = () => {
   return (
     <HashRouter hashType="slash">
     <Routes>
-     <Route path='/Registro' element = {<Login />} />
-     <Route path='/Contacto' element={<Contact />}  />
-     <Route path='/' element = {<Registro />} />
+     <Route path='/' element = {<Login/>} />
+     <Route path='/Contacto' element={<Contact/>}  />
+     <Route path='/Registro' element = {<Registro/>} />
     </Routes>
       <Header />
 
       <Routes>
-        <Route path='/Login' element={<> <Slider /> <ListProducts /> </>} />
         <Route path='/home' element={<> <Slider /> <ListProducts /> </>} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/trolley' element={<Trolley />} />
