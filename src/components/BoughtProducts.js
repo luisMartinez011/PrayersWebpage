@@ -22,11 +22,11 @@ export const BoughtProducts = (props) => {
                             <Card.Body>
                                 <Card.Title className='text-bold text-center fw-bold'>{troll.nombre}</Card.Title>
                                 <Card.Text className='text-center'>
-                                    El precio es: {troll.precio} ₽
+                                    El precio es: {troll.precio} $
                                 </Card.Text>
                                 <div className='card-footer'>
                                     Total:
-                                    {' ' + troll.precio * troll.quantity} ₽
+                                    {' ' + troll.precio * troll.cantidad} $
                                 </div>
                             </Card.Body>
                         </Card>
