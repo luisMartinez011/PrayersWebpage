@@ -2,15 +2,16 @@ import { useNavigate } from 'react-router-dom'
 import '../../../src/assets/css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{ useState, useEffect } from 'react'
+import Header from '../Header';
 function Login()
 {
+  let registro;
   const [email,setemail]=useState("");
   const [password,setpassword]=useState("");
 
   const history = useNavigate();
   useEffect( () => {
     if (localStorage.getItem('user-info')) {
-      history("/Registro")
     }
   },[]
 
@@ -30,7 +31,12 @@ body: JSON.stringify(item)
 
  result = await result.json();
  localStorage.setItem("user-info",JSON.stringify(result))
- history("#/Contacto")
+ history("/home")
+registro = 1;
+}
+async function Registro()
+{
+  history("/Registro")
 }
   return (
     <div className="containerPrincipal">
@@ -45,9 +51,10 @@ body: JSON.stringify(item)
       <br/>
       <input type="password" className="form-control" onChange={(e) => password(e.target.value)} />
       <br/>
-      <button className="btn btn-primary" onClick={Logueo} >Iniciar Sesion </button>
+      <button className="btn btn-primary" onClick={Logueo} registro={registro} >Iniciar Sesion </button>
       <br/>
-      <button className="btn btn-primary" onClick={event =>  window.location.href='/'} >Crear Cuenta </button>
+      <br/>
+      <button className="btn btn-primary" onClick={Registro} >Crear Cuenta </button>
       </div>
       </div>
     </div>
