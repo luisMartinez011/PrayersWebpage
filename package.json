@@ -1,7 +1,7 @@
 {
   "name": "proyect-eccomerce-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://luisMartinez011.github.io/PrayersWebpage",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

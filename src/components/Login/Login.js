@@ -29,9 +29,9 @@ function Login() {
 
     result = await result.json();
     console.log(result);
-    // localStorage.setItem("user-info", JSON.stringify(result))
-    // history("/home")
-    // registro = 1;
+    localStorage.setItem("user-info", JSON.stringify(result))
+    history("/home")
+    registro = 1;
   }
   async function Registro() {
     history("/Registro")
