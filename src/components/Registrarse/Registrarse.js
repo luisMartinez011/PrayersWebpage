@@ -21,7 +21,7 @@ function Registro()
     })
         result = await result.json()
         localStorage.setItem("user-info",JSON.stringify(result))
-        history("/Registro")
+        history("/")
     }
     return(
         <div className="containerPrincipal">
@@ -36,10 +36,12 @@ function Registro()
         <br/>
         <input type="password" value = {password} className="form-control" onChange={(e) => setpassword(e.target.value)} />
         <br/>
-        <input type="text" value = {name} className="form-control" onChange={(e) => setname(e.target.value)} />
         <label> nombre: </label>
         <br/>
-        <button className="btn btn-primary" onClick={SignUp}>Registrarse </button>
+        <input type="text" value = {name} className="form-control" onChange={(e) => setname(e.target.value)} />
+        <br/>
+        <br/>
+        <button className="btn btn-primary" onClick={() => SignUp()}>Registrarse </button>
         </div>
         </div>
       </div>
