@@ -1,8 +1,7 @@
 .containerPrincipal
 {
-    position: absolute;
-    top:50%;
-    transform:translate(60%,-50%);
+    position: relative;
+    margin: 10px;
     border: 6px solid blue;
     padding: 40px;
     background-color: white;
