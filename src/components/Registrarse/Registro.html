@@ -1,0 +1,21 @@
+<div className="containerPrincipal">
+    <div className="containerSecundario">
+        <h1>Ingrese Su Usuario Para Registrarse</h1>
+        <div className="form-group">
+            <label> correo: </label>
+            <br/>
+            <input type="text" value = {email} className="form-control" onChange={(e) => setemail(e.target.value)} />
+            <br/>
+            <label>Contraseña: </label>
+            <br/>
+            <input type="password" value = {password} className="form-control" onChange={(e) => setpassword(e.target.value)} />
+            <br/>
+            <label> nombre: </label>
+            <br/>
+            <input type="text" value = {name} className="form-control" onChange={(e) => setname(e.target.value)} />
+            <br/>
+            <br/>
+            <button className="btn btn-primary" onClick={() => SignUp()}>Registrarse </button>
+        </div>
+    </div>
+</div>
