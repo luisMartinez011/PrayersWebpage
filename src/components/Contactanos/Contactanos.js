@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../../src/assets/css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Contactanos = () => {
